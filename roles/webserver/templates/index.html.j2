@@ -1,1 +1,39 @@
-<html>Index Template</html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>evoila Ansible Knowledge Challenge</title>
+    <script src="solution.js"></script>
+</head>
+<body>
+<h1>evoila Ansible Knowledge Challenge</h1>
+<p>Beantworte alle Fragen. Klicke auf eine Antwort, um direkt zu erfahren, ob sie richtig ist!</p>
+
+<ol>
+    <li>Welche Datei definiert die Zielsysteme?
+        <ul>
+            <li onclick="showExplanation(1, 'A')">A) ansible.cfg</li>
+            <li onclick="showExplanation(1, 'B')">B) inventories/hosts</li>
+            <li onclick="showExplanation(1, 'C')">C) inventory.yaml</li>
+        </ul>
+        <p id="explanation1"></p>
+    </li>
+    <!-- weitere Fragen... analog ergänzt -->
+    <!-- Beispiel für Frage 2 -->
+    <li>Wie nennt man die Datei, die Rollen und Hosts beschreibt?
+        <ul>
+            <li onclick="showExplanation(2, 'A')">A) Playbook</li>
+            <li onclick="showExplanation(2, 'B')">B) Tasklist</li>
+            <li onclick="showExplanation(2, 'C')">C) Manifest</li>
+        </ul>
+        <p id="explanation2"></p>
+    </li>
+    <!-- Fragen 3 bis 10 analog ergänzt... -->
+</ol>
+
+<h3>Lösungswort prüfen</h3>
+<input type="text" id="solutionInput" placeholder="Lösungswort hier eingeben">
+<button onclick="checkSolution()">Prüfen</button>
+<p id="result"></p>
+</body>
+</html>
