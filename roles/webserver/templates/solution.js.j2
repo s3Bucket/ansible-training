@@ -1,43 +1,43 @@
 const explanations = {
-    'Q1A': { text: 'Falsch: ansible.cfg definiert nur Konfiguration.', letter: '' },
-    'Q1B': { text: 'Richtig: inventories/hosts enthält die Zielsysteme.', letter: 'I' },
-    'Q1C': { text: 'Falsch: inventory.yaml ist kein Standard.', letter: '' },
+    'Q1A': { text: 'Falsch: Die ansible.cfg konfiguriert globale Einstellungen wie den Pfad zum Inventory, definiert aber nicht direkt die Hosts.', letter: '' },
+    'Q1B': { text: 'Richtig: In der Datei inventories/hosts definieren wir, welche Zielsysteme Ansible ansprechen soll. Hier werden Hosts und Hostgruppen eingetragen.', letter: 'I' },
+    'Q1C': { text: 'Falsch: inventory.yaml ist keine Standarddatei in diesem Projekt. Inventories können YAML sein, aber hier nutzen wir ein INI-Format.', letter: '' },
 
-    'Q2A': { text: 'Richtig: Ein Playbook beschreibt Rollen, Hosts und Tasks.', letter: 'P' },
-    'Q2B': { text: 'Falsch: Tasklist ist kein Playbook.', letter: '' },
-    'Q2C': { text: 'Falsch: Manifest ist ein Puppet-Begriff.', letter: '' },
+    'Q2A': { text: 'Richtig: Ein Playbook ist eine YAML-Datei, in der definiert wird, welche Aufgaben auf welchen Hosts mit welchen Rollen ausgeführt werden. Es bildet die Steuerzentrale jeder Ansible-Automatisierung.', letter: 'P' },
+    'Q2B': { text: 'Falsch: Eine Tasklist ist Teil einer Rolle, nicht das gesamte Steuerdokument.', letter: '' },
+    'Q2C': { text: 'Falsch: Manifeste sind Teil von Puppet, nicht Ansible.', letter: '' },
 
-    'Q3A': { text: 'Richtig: Tasks sind die Arbeitsschritte in einem Playbook.', letter: 'T' },
+    'Q3A': { text: 'Richtig: Tasks sind die einzelnen Anweisungen in einem Playbook oder einer Rolle. Sie beschreiben die konkreten Arbeitsschritte wie das Installieren von Software.', letter: 'T' },
     'Q3B': { text: 'Falsch: Steps gibt es in Ansible nicht.', letter: '' },
-    'Q3C': { text: 'Falsch: Plays definieren die Zielhosts, nicht die Aufgaben.', letter: '' },
+    'Q3C': { text: 'Falsch: Plays sind die Kombination aus Hosts und Tasks, aber nicht die Schritte selbst.', letter: '' },
 
-    'Q4A': { text: 'Richtig: Roles strukturieren Ansible-Projekte in Tasks, Vars, Templates.', letter: 'R' },
-    'Q4B': { text: 'Falsch: Bundles ist kein Begriff.', letter: '' },
-    'Q4C': { text: 'Falsch: Kits existieren in Ansible nicht.', letter: '' },
+    'Q4A': { text: 'Richtig: Roles oder Rollen in Ansible sind eine strukturierte Möglichkeit, Aufgaben, Variablen, Templates und Dateien zu bündeln. Sie fördern Wiederverwendbarkeit und Ordnung.', letter: 'R' },
+    'Q4B': { text: 'Falsch: Bundles ist kein Begriff in Ansible.', letter: '' },
+    'Q4C': { text: 'Falsch: Kits gibt es nicht als Struktur in Ansible.', letter: '' },
 
-    'Q5A': { text: 'Richtig: Templates nutzen Variablen zur Dateigenerierung.', letter: 'E' },
-    'Q5B': { text: 'Falsch: Copyfile ist kein Modul.', letter: '' },
-    'Q5C': { text: 'Falsch: Render ist kein Ansible-Modul.', letter: '' },
+    'Q5A': { text: 'Richtig: Mit Templates (Jinja2-Vorlagen) können Dateien generiert werden, die Variablen enthalten. Diese werden beim Deployment dynamisch ersetzt.', letter: 'E' },
+    'Q5B': { text: 'Falsch: Copyfile existiert nicht in Ansible.', letter: '' },
+    'Q5C': { text: 'Falsch: Render ist kein Modul.', letter: '' },
 
-    'Q6A': { text: 'Richtig: set_fact definiert Variablen dynamisch.', letter: 'F' },
-    'Q6B': { text: 'Falsch: define_var existiert nicht.', letter: '' },
-    'Q6C': { text: 'Falsch: create_var ist ungültig.', letter: '' },
+    'Q6A': { text: 'Richtig: Mit set_fact können dynamisch Variablen definiert werden, die während des Playbook-Laufs entstehen und später wiederverwendbar sind.', letter: 'F' },
+    'Q6B': { text: 'Falsch: define_var gibt es in Ansible nicht.', letter: '' },
+    'Q6C': { text: 'Falsch: create_var ist kein valides Modul.', letter: '' },
 
     'Q7A': { text: 'Falsch: Listeners ist kein Begriff in Ansible.', letter: '' },
-    'Q7B': { text: 'Richtig: Handlers reagieren auf Änderungen.', letter: 'H' },
-    'Q7C': { text: 'Falsch: Observers gibt es nicht.', letter: '' },
+    'Q7B': { text: 'Richtig: Handlers sind spezielle Tasks, die nur dann ausgeführt werden, wenn sie durch notify aus einem vorherigen Task ausgelöst werden, z.B. um einen Service neu zu starten.', letter: 'H' },
+    'Q7C': { text: 'Falsch: Observers sind kein Bestandteil von Ansible.', letter: '' },
 
-    'Q8A': { text: 'Richtig: ansible -m setup zeigt alle Facts des Systems.', letter: 'S' },
-    'Q8B': { text: 'Falsch: --facts ist kein valider Parameter.', letter: '' },
-    'Q8C': { text: 'Falsch: ansible-inventory zeigt nur Inventar.', letter: '' },
+    'Q8A': { text: 'Richtig: Der Befehl ansible -m setup ruft die sogenannten Facts vom Zielsystem ab. Das sind Systeminformationen wie OS-Typ, IP-Adresse oder Hardwaredaten.', letter: 'S' },
+    'Q8B': { text: 'Falsch: --facts ist kein gültiger Parameter.', letter: '' },
+    'Q8C': { text: 'Falsch: ansible-inventory zeigt die Inventarstruktur, aber keine Systemdaten.', letter: '' },
 
-    'Q9A': { text: 'Richtig: Ansible Galaxy ist die offizielle Plattform für Rollen & Collections.', letter: 'A' },
-    'Q9B': { text: 'Falsch: Ansible Hub ist kein offizieller Marktplatz.', letter: '' },
+    'Q9A': { text: 'Richtig: Ansible Galaxy ist die offizielle Plattform, um Rollen und Collections aus der Community zu beziehen oder eigene zu veröffentlichen.', letter: 'A' },
+    'Q9B': { text: 'Falsch: Ansible Hub gibt es als Begriff nicht öffentlich.', letter: '' },
     'Q9C': { text: 'Falsch: Ansible Store existiert nicht.', letter: '' },
 
-    'Q10A': { text: 'Falsch: Bundles ist kein definierter Begriff.', letter: '' },
-    'Q10B': { text: 'Richtig: Collections bündeln Rollen, Module und Plugins.', letter: 'C' },
-    'Q10C': { text: 'Falsch: Packages meint OS-Pakete, nicht Ansible-Komponenten.', letter: '' },
+    'Q10A': { text: 'Falsch: Bundles ist kein Begriff in Ansible.', letter: '' },
+    'Q10B': { text: 'Richtig: Collections bündeln Rollen, Module, Plugins und andere Inhalte und sind seit Ansible 2.9 das Standardformat für Erweiterungen.', letter: 'C' },
+    'Q10C': { text: 'Falsch: Packages meint Systempakete, nicht Ansible-Komponenten.', letter: '' },
 };
 
 function showExplanation(question, answer) {
@@ -57,7 +57,7 @@ function showExplanation(question, answer) {
 
 function checkSolution() {
     const input = document.getElementById('solutionInput').value.toUpperCase();
-    if (input === 'IPTREFHSA' + 'C') {  // letzter Buchstabe ist C
+    if (input === 'IPTREFHSAC') {
         window.location.href = 'fun_image.jpg';
     } else {
         document.getElementById('result').innerText = 'Leider falsch. Versuche es erneut!';
