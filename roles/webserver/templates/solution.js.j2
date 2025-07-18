@@ -1,1 +1,25 @@
-console.log("Solution logic");
+const explanations = {
+    'Q1A': 'Falsch: ansible.cfg definiert Konfiguration, nicht die Hosts.',
+    'Q1B': 'Richtig: inventories/hosts enthält die Zielsysteme.',
+    'Q1C': 'Falsch: inventory.yaml ist kein Standard in diesem Projekt.',
+
+    'Q2A': 'Richtig: Ein Playbook beschreibt Rollen, Hosts und Tasks.',
+    'Q2B': 'Falsch: Eine Tasklist gehört zu Rollen, nicht direkt zum Playbook.',
+    'Q2C': 'Falsch: Manifest ist ein Begriff aus Puppet, nicht Ansible.',
+
+    // weitere Erklärungen für Fragen 3 bis 10 ...
+};
+
+function showExplanation(question, answer) {
+    const key = `Q${question}${answer}`;
+    document.getElementById(`explanation${question}`).innerText = explanations[key] || 'Noch keine Erklärung hinterlegt.';
+}
+
+function checkSolution() {
+    const input = document.getElementById('solutionInput').value.toUpperCase();
+    if (input === 'IPTREHFSA') {
+        window.location.href = 'fun_image.jpg';
+    } else {
+        document.getElementById('result').innerText = 'Falsch. Versuch es erneut!';
+    }
+}
