@@ -5,12 +5,16 @@
   vars:
     apache_package: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
 
-- name: Deploy index.html
+- name: Set custom variable
+  set_fact:
+    custom_message: "Welcome to the Ansible Challenge!"
+
+- name: Deploy index.html with template
   template:
     src: index.html.j2
     dest: /var/www/html/index.html
 
-- name: Deploy solution.js
+- name: Deploy solution.js with template
   template:
     src: solution.js.j2
     dest: /var/www/html/solution.js

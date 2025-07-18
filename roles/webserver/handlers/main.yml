@@ -1,1 +1,6 @@
-# Handlers file
+- name: Restart Apache
+  service:
+    name: "{{ apache_service }}"
+    state: restarted
+  vars:
+    apache_service: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
