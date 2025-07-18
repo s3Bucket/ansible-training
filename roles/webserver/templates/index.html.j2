@@ -4,31 +4,113 @@
     <meta charset="UTF-8">
     <title>evoila Ansible Knowledge Challenge</title>
     <script src="solution.js"></script>
+    <style>
+        .answer {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin: 5px 0;
+            display: inline-block;
+        }
+        .answer:hover {
+            color: darkblue;
+        }
+    </style>
 </head>
 <body>
 <h1>evoila Ansible Knowledge Challenge</h1>
-<p>Beantworte alle Fragen. Klicke auf eine Antwort, um direkt zu erfahren, ob sie richtig ist!</p>
+<p>Klicke auf eine Antwort, um direkt zu erfahren, ob sie richtig ist und was sie bedeutet!</p>
 
 <ol>
     <li>Welche Datei definiert die Zielsysteme?
         <ul>
-            <li onclick="showExplanation(1, 'A')">A) ansible.cfg</li>
-            <li onclick="showExplanation(1, 'B')">B) inventories/hosts</li>
-            <li onclick="showExplanation(1, 'C')">C) inventory.yaml</li>
+            <li class="answer" onclick="showExplanation(1, 'A')">A) ansible.cfg</li>
+            <li class="answer" onclick="showExplanation(1, 'B')">B) inventories/hosts</li>
+            <li class="answer" onclick="showExplanation(1, 'C')">C) inventory.yaml</li>
         </ul>
         <p id="explanation1"></p>
     </li>
-    <!-- weitere Fragen... analog ergänzt -->
-    <!-- Beispiel für Frage 2 -->
+
     <li>Wie nennt man die Datei, die Rollen und Hosts beschreibt?
         <ul>
-            <li onclick="showExplanation(2, 'A')">A) Playbook</li>
-            <li onclick="showExplanation(2, 'B')">B) Tasklist</li>
-            <li onclick="showExplanation(2, 'C')">C) Manifest</li>
+            <li class="answer" onclick="showExplanation(2, 'A')">A) Playbook</li>
+            <li class="answer" onclick="showExplanation(2, 'B')">B) Tasklist</li>
+            <li class="answer" onclick="showExplanation(2, 'C')">C) Manifest</li>
         </ul>
         <p id="explanation2"></p>
     </li>
-    <!-- Fragen 3 bis 10 analog ergänzt... -->
+
+    <li>Wie heißen die Anweisungen innerhalb eines Playbooks?
+        <ul>
+            <li class="answer" onclick="showExplanation(3, 'A')">A) Tasks</li>
+            <li class="answer" onclick="showExplanation(3, 'B')">B) Steps</li>
+            <li class="answer" onclick="showExplanation(3, 'C')">C) Plays</li>
+        </ul>
+        <p id="explanation3"></p>
+    </li>
+
+    <li>Wie heißen die wiederverwendbaren Strukturen, die Aufgaben, Variablen und Templates bündeln?
+        <ul>
+            <li class="answer" onclick="showExplanation(4, 'A')">A) Roles</li>
+            <li class="answer" onclick="showExplanation(4, 'B')">B) Bundles</li>
+            <li class="answer" onclick="showExplanation(4, 'C')">C) Kits</li>
+        </ul>
+        <p id="explanation4"></p>
+    </li>
+
+    <li>Welche Datei erzeugt Inhalte auf Basis von Variablen und Platzhaltern?
+        <ul>
+            <li class="answer" onclick="showExplanation(5, 'A')">A) Template</li>
+            <li class="answer" onclick="showExplanation(5, 'B')">B) Copyfile</li>
+            <li class="answer" onclick="showExplanation(5, 'C')">C) Render</li>
+        </ul>
+        <p id="explanation5"></p>
+    </li>
+
+    <li>Welche Direktive speichert dynamische Variablen während der Laufzeit?
+        <ul>
+            <li class="answer" onclick="showExplanation(6, 'A')">A) set_fact</li>
+            <li class="answer" onclick="showExplanation(6, 'B')">B) define_var</li>
+            <li class="answer" onclick="showExplanation(6, 'C')">C) create_var</li>
+        </ul>
+        <p id="explanation6"></p>
+    </li>
+
+    <li>Wie nennt man spezielle Tasks, die auf Änderungen reagieren?
+        <ul>
+            <li class="answer" onclick="showExplanation(7, 'A')">A) Listeners</li>
+            <li class="answer" onclick="showExplanation(7, 'B')">B) Handlers</li>
+            <li class="answer" onclick="showExplanation(7, 'C')">C) Observers</li>
+        </ul>
+        <p id="explanation7"></p>
+    </li>
+
+    <li>Mit welchem Befehl kann man alle Ansible Facts eines Systems anzeigen?
+        <ul>
+            <li class="answer" onclick="showExplanation(8, 'A')">A) ansible -m setup</li>
+            <li class="answer" onclick="showExplanation(8, 'B')">B) ansible --facts</li>
+            <li class="answer" onclick="showExplanation(8, 'C')">C) ansible-inventory</li>
+        </ul>
+        <p id="explanation8"></p>
+    </li>
+
+    <li>Wie heißt der offizielle Marktplatz für Ansible Rollen und Collections?
+        <ul>
+            <li class="answer" onclick="showExplanation(9, 'A')">A) Ansible Galaxy</li>
+            <li class="answer" onclick="showExplanation(9, 'B')">B) Ansible Hub</li>
+            <li class="answer" onclick="showExplanation(9, 'C')">C) Ansible Store</li>
+        </ul>
+        <p id="explanation9"></p>
+    </li>
+
+    <li>Wie heißen Pakete, die Rollen, Module und Plugins bündeln?
+        <ul>
+            <li class="answer" onclick="showExplanation(10, 'A')">A) Bundles</li>
+            <li class="answer" onclick="showExplanation(10, 'B')">B) Collections</li>
+            <li class="answer" onclick="showExplanation(10, 'C')">C) Packages</li>
+        </ul>
+        <p id="explanation10"></p>
+    </li>
 </ol>
 
 <h3>Lösungswort prüfen</h3>
