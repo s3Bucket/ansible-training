@@ -1,1 +1,31 @@
-# Main tasks file
+- name: Install Apache
+  package:
+    name: "{{ apache_package }}"
+    state: present
+  vars:
+    apache_package: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
+
+- name: Deploy index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+
+- name: Deploy solution.js
+  template:
+    src: solution.js.j2
+    dest: /var/www/html/solution.js
+
+- name: Copy fun image
+  copy:
+    src: fun_image.jpg
+    dest: /var/www/html/fun_image.jpg
+
+- name: Ensure Apache is running
+  service:
+    name: "{{ apache_service }}"
+    state: started
+    enabled: true
+  vars:
+    apache_service: "{{ 'httpd' if ansible_os_family == 'RedHat' else 'apache2' }}"
+  notify:
+    - Restart Apache
